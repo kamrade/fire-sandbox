@@ -3,8 +3,6 @@ export class Post {
   content: string;
   createdAt: number;
   updatedAt?: number;
-  ownerID: string;
-  ownerDisplayName: string;
 }
 
 export class PostComplex {

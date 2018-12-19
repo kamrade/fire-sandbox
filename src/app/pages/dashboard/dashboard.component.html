@@ -3,6 +3,14 @@
   <div class="mb-3">
     <h3 class="mb-5">Dashboard</h3>
     <button class="btn btn-lg btn-primary align-top" (click)="openModal('modal-dialog-new-report')">Create new report</button>
+    <hr/>
+
+    <ul>
+      <li *ngFor="let post of posts">
+        {{ post.data.title }}
+      </li>
+    </ul>
+
   </div>
 </div>
 

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { ModalService } from 'src/app/core/modal.service';
 import { FiredataService } from 'src/app/core/firedata.service';
+import { Observable } from 'rxjs';
+
+import { PostComplex } from 'src/app/models/post';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +13,18 @@ import { FiredataService } from 'src/app/core/firedata.service';
 })
 export class DashboardComponent implements OnInit {
 
+  posts$: Observable<PostComplex[]>;
+  posts: PostComplex[];
+
   constructor(
-    private modalService: ModalService
+    private modalService: ModalService,
+    public firedataService: FiredataService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.posts$ = this.firedataService.getPosts();
+    this.posts$.subscribe(v => this.posts = v);
+  }
 
   openModal(id: string) {
     this.modalService.open(id);
@@ -23,5 +33,4 @@ export class DashboardComponent implements OnInit {
   closeModal(id: string) {
     this.modalService.close(id);
   }
-
 }

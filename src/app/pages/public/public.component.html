@@ -1,5 +1,20 @@
 <div class="container">
 
-  PUBLIC
+  <div>
+    <ul>
+      <li *ngFor="let post of posts">{{ post.data.title }}</li>
+    </ul>
+  </div>
+
+  <form #f="ngForm" (submit)="createPost($event, f)" novalidate>
+    <input
+      name="title" ngModel required #title="ngModel"
+      type="text" class="form-control form-control-lg mb-2">
+    <textarea
+      name="content" ngModel required #content="ngModel"
+      class="form-control form-control-lg mb-2" id="" cols="30" rows="5"></textarea>
+    <button type="submit" class="btn btn-lg btn-primary mb-2">Add new post</button>
+  </form>
+
 
 </div>
