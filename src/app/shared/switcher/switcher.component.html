@@ -1,0 +1,5 @@
+<div [ngClass]="{ 'app-switcher': true, 'checked': isChecked, 'disabled': disabled }">
+  <label class="form-check-label">
+    <input [disabled]="disabled" (change)="onChange()" [(ngModel)]="isChecked" type="checkbox" class="form-check-input">
+  </label>
+</div>

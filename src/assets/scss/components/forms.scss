@@ -1,0 +1,62 @@
+@import "variables";
+
+input.form-control {
+
+  &:read-only {
+    background-color: $gray-200;
+    opacity: .5;
+  }
+
+  &:focus {
+    border-color: $gray-300;
+  }
+
+}
+
+.form-label {
+  display: block;
+  line-height: 20px;
+  color: $text-muted;
+
+  .form-label-sm {
+    font-size: $font-size-sm;
+  }
+}
+
+.link {
+  line-height: 20px;
+  display: inline-block;
+}
+
+.btn {
+  line-height: 26px;
+  &.btn-sm {
+    line-height: 15px;
+  }
+  &.btn-lg {
+    line-height: 32px;
+  }
+}
+
+.form-control {
+  line-height: 26px;
+  height: 40px;
+  display: block;
+  background-color: $white;
+  border: 1px solid $gray-300;
+
+  &-sm {
+    line-height: 15px;
+    height: 30px;
+  }
+  &-lg {
+    line-height: 26px;
+    height: 50px;
+  }
+
+  &:focus {
+    border: 1px solid $primary;
+    outline: none;
+    box-shadow: none;
+  }
+}
